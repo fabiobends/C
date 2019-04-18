@@ -1,0 +1,4 @@
+>>> Warning 240 "prova.c" Line 34(24,28): Pointer types do not match
+      Memory usage:   ROM=7%      RAM=3% - 4%
+      0 Errors,  1 Warnings.
+Build Successful.

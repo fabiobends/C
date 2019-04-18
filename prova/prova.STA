@@ -1,0 +1,63 @@
+
+ROM used:   2266/32768 (7%)
+            2266/32768 (7%) including unused fragments
+
+            1.1 Average locations per line
+            6.1 Average locations per statement
+
+RAM used:   55/2048 (3%) at main() level
+            77/2048 (4%) worst case
+
+Stack used: 4 worst case (3 in main + 1 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   51    20   5  prova.c
+    5     0   0  prova.h
+  842     0   0  ..\..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h
+  643   224  60  ..\..\..\..\..\Program Files (x86)\PICC\drivers\glcd.c
+   37     0   0  ..\..\..\..\..\Program Files (x86)\PICC\drivers\stdio.h
+  435   129  35  ..\..\..\..\..\Program Files (x86)\PICC\drivers\string.h
+   32     0   0  ..\..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h
+   28     0   0  ..\..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h
+----- -----
+ 2073   373 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0    272   6    0             @const637
+0    236   5    0             @const641
+0    134   3    1    555  3.4  glcd_init
+0    174   4    6    734  7.1  glcd_pixel
+0    340   8   21   1436  9.2  glcd_text57
+0    116   3    4    498  4.8  glcd_fillScreen
+0     52   1    2    247  3.2  glcd_writeByte
+0     84   2    2    499  3.8  glcd_readByte
+0     26   1    0     65  1.9  timer2_isr
+0    258   6   20    551  6.1  MAIN
+0     56   1    2             @ITOF
+0    348   8   14             @DIVFF
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               8
+    Statements              373
+    Comments                631
+    Volume (V)              6702
+    Difficulty (D)          39.1
+    Effort to implement (E) 261891
+    Time to implement (T)   4 hours, 2 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   19
+    Maintainability (MI)    120
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000AC   166  0  
+000AE-07FFE  2096  30498  
+
+
+

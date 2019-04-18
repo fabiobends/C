@@ -1,0 +1,152 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019-01A strtok.save
+01B-01C pulses
+01D-01E cnt
+01F-022 freq
+023-032 MAIN.a
+033     glcd_text57.x
+033     glcd_init.mode
+033-034 @ITOF.P1
+033     MAIN.@SCRATCH1
+034     glcd_fillScreen.color
+034     glcd_text57.y
+034     MAIN.@SCRATCH2
+035     glcd_fillScreen.i
+035-036 glcd_text57.textptr
+035     MAIN.@SCRATCH3
+036     glcd_fillScreen.j
+036     MAIN.@SCRATCH4
+037-03A @DIVFF.P1
+037     glcd_text57.size
+037     glcd_fillScreen.@SCRATCH1
+038     glcd_text57.color
+039     glcd_text57.i
+03A     glcd_text57.j
+03B     glcd_text57.k
+03B-03E @DIVFF.P1
+03C     glcd_text57.l
+03D     glcd_text57.m
+03E-042 glcd_text57.pixelData
+03F     @DIVFF.@SCRATCH1
+040     @DIVFF.@SCRATCH2
+041     @DIVFF.@SCRATCH3
+042     @DIVFF.@SCRATCH4
+043     glcd_text57.@SCRATCH1
+043     @DIVFF.@SCRATCH5
+044     glcd_text57.@SCRATCH2
+044     @DIVFF.@SCRATCH6
+045     glcd_pixel.x
+045     glcd_text57.@SCRATCH3
+046     glcd_pixel.y
+046     glcd_text57.@SCRATCH4
+047     glcd_pixel.color
+047     glcd_text57.@SCRATCH5
+048     glcd_pixel.data
+049     glcd_pixel.chip
+04A     glcd_readByte.chip
+04A     glcd_pixel.@SCRATCH1
+04B     glcd_readByte.data
+04B     glcd_writeByte.chip
+04C     glcd_writeByte.data
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000AE  TEXT.call
+0000BE  TEXT.data
+0001BE  TEXT2.call
+0001CE  TEXT2.data
+0002AA  timer2_isr
+0002C4  glcd_writeByte
+0002F8  glcd_fillScreen
+00036C  glcd_init
+0003F2  @ITOF
+00042A  @DIVFF
+000586  glcd_readByte
+0005DA  glcd_pixel
+000688  glcd_text57
+0007DC  MAIN
+0007DC  @cinit1
+0007F2  @cinit2
+
+Project Directory:
+    C:\Users\Fábio Bends\Documents\PIC\prova\
+
+Project Files:
+    prova.c                                                 [13-jun-17 21:19  CRC=FE6A71B7]
+    prova.h                                                 [02-jun-17 08:26  CRC=00000000]
+    ..\..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h [24-fev-17 16:24  CRC=AD4A1276]
+    ..\..\..\..\..\Program Files (x86)\PICC\drivers\glcd.c  [18-nov-05 08:48  CRC=C6ACD324]
+    ..\..\..\..\..\Program Files (x86)\PICC\drivers\stdio.h [31-jul-07 14:24  CRC=4E4534F4]
+    ..\..\..\..\..\Program Files (x86)\PICC\drivers\string.h [26-mar-15 12:34  CRC=C4814297]
+    ..\..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h [05-set-14 11:47  CRC=897CEC6C]
+    ..\..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h [03-jan-08 14:55  CRC=2D1F019F]
+
+Source signature=68E2BE86
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=0D54
+
+Units:
+    prova (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   prova.xsym
+    Errors:      prova.err
+    Ext Symbols: prova.esym
+    INHX32:      prova.hex
+    Symbols:     prova.sym
+    List:        prova.lst
+    Debug/COFF:  prova.cof
+    Project:     prova.ccspjt
+    Call Tree:   prova.tre
+    Statistics:  prova.STA
