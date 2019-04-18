@@ -1,0 +1,55 @@
+
+ROM used:   2878/32768 (9%)
+            2878/32768 (9%) including unused fragments
+
+            0.9 Average locations per line
+            10.7 Average locations per statement
+
+RAM used:   16/2048 (1%) at main() level
+            82/2048 (4%) worst case
+
+Stack used: 0 worst case (0 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   22    10   4  lab09.c
+    5     0   0  lab09.h
+  842     0   0  ..\..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h
+ 2227   258  96  ..\..\..\..\..\Program Files (x86)\PICC\drivers\math.h
+----- -----
+ 3096   268 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     40   1    1             @delay_ms1
+0    120   2   10     59  4.2  @FLT
+0     56   1    4    179  3.3  @SFTOI
+0     68   1    2    460  4.7  @ITOF
+0    242   4   11    814  7.2  @MULFF
+0    618  11   16    208  6.3  @ADDFF
+0    348   6   14     90  2.5  @DIVFF
+0    828  14   46   1146  9.9  cos
+0     74   1    8     44  1.9  sin
+0    480   8   12    408  5.5  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               9
+    Statements              268
+    Comments                418
+    Volume (V)              5043
+    Difficulty (D)          44.9
+    Effort to implement (E) 226513
+    Time to implement (T)   3 hours, 30 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   9
+    Maintainability (MI)    38
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE  2874  29890  
+
+
+

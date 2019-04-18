@@ -1,0 +1,63 @@
+#include <lab08.h>
+#include <lcd.c>
+#byte key_pad_port = 0xF21
+#define KEY_CNT 50
+
+char str[17];
+char key_map[16]={'D','#','0','*','C','9','8','7','B','6','5','4','A','3','2','1'};
+int16 sw_cnt[16]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+int key_pad[16]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+int key_pad_old[16]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+
+void enable_key_pad_row(int k)
+{
+   set_tris_b(~(0x10<<k));
+   key_pad_port = ~(0x01<<k);
+}
+
+void key_pad_scan()
+{
+   int i,n;
+   for (i=0;i<4;i++)
+   {
+      enable_key_pad_row(i);
+      for (n=0;n<4;n++)
+      {
+         if((key_pad_port & (1<<n+4)==0)
+            sw_cnt[i*4+n]=(sw_cnt[i*4+n]==KEY_CNT) ? KEY_CNT : sw_cnt[i*4+n]+1;
+         else 
+            sw_cnt[i*4+n]=0;
+            key_pad[i*4+n]=(sw_cnt[i*4+n]==KEY_CNT) ? 1 : 0;
+      }
+   }
+}
+
+void input_code()
+{
+   //implementar
+}
+
+void lcd_update()
+{
+   //implementar
+}
+
+void main()
+{
+   port_b_pullups(FALSE);
+   set_tris_b(0xFF);
+   setup_adc_ports(NO_ANALOGS|VREF_VREF);
+   lcd_init();
+   sprintf(str,"");
+   while(TRUE)
+   {
+   key_pad_scan();
+   input_code();
+   lcd_update();
+      for(i=0;i<16;i++)
+      key_pad_old[]=key_pad[];
+      delay_ms[5];
+   }
+}
+/*input_code atualizar a string str quando uma nova tecla for pressionada
+  lcd_update atualizar o lcd apenas quando a string str mudar*/

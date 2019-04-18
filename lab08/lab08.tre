@@ -1,0 +1,35 @@
+ÀÄlab08
+   ÀÄMAIN  0/50  Ram=0
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄlcd_init  0/116  Ram=6
+      ³  ÃÄ@delay_ms1  0/42  Ram=1
+      ³  ÃÄlcd_send_nibble  0/30  Ram=1
+      ³  ÃÄ@delay_ms1  0/42  Ram=1
+      ³  ÃÄlcd_send_nibble  0/30  Ram=1
+      ³  ÃÄ@delay_ms1  0/42  Ram=1
+      ³  ÀÄlcd_send_byte  0/58  Ram=3
+      ³     ÃÄlcd_read_byte  0/66  Ram=3
+      ³     ³  ÃÄlcd_read_nibble  0/12  Ram=0
+      ³     ³  ÀÄlcd_read_nibble  0/12  Ram=0
+      ³     ÃÄlcd_send_nibble  0/30  Ram=1
+      ³     ÀÄlcd_send_nibble  0/30  Ram=1
+      ÃÄkeypad_scan  0/176  Ram=4
+      ³  ÃÄget_line  0/28  Ram=2
+      ³  ÃÄ@WRITEBITA  0/64  Ram=6
+      ³  ÃÄ@READBITA  0/52  Ram=5
+      ³  ÀÄcalc  0/18  Ram=3
+      ÃÄinput_code  0/178  Ram=0
+      ÀÄlcd_update  0/18  Ram=0
+         ÀÄlcd_putc  0/82  Ram=1
+            ÃÄlcd_gotoxy  0/34  Ram=4
+            ³  ÀÄlcd_send_byte  0/58  Ram=3
+            ³     ÀÄ*
+            ÃÄlcd_send_byte  0/58  Ram=3
+            ³  ÀÄ*
+            ÃÄ@delay_ms1  0/42  Ram=1
+            ÃÄlcd_gotoxy  0/34  Ram=4
+            ³  ÀÄ*
+            ÃÄlcd_send_byte  0/58  Ram=3
+            ³  ÀÄ*
+            ÀÄlcd_send_byte  0/58  Ram=3
+               ÀÄ*

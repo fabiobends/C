@@ -1,0 +1,151 @@
+#include <lab08.h>
+#include <lcd.c>
+
+
+/////////////minhas variaveis/////////////
+int1 done=1;
+int8 key=0;//para saber o valor da tecla a ser pressionada
+int1 ok=0;//para "habilitar leitura do teclado". impede repetição infinita
+char character=0; //para input_code
+ //se o lcd ja conheceu a criança
+void get_line(int i)
+{
+   output_b((0x01<<i)); //de zero a 3
+}
+
+int8 calc(int8 line, int8 row)//implementada por motivo de maleabilidade e possibilidade de alteracao
+{
+   int j;//para que nao comece com zero
+   j = row + 4*line;
+   return j;
+}
+
+void keypad_scan()//le teclas
+{
+   int8 row, line;
+   static int1 entry=0 ; //se foi apertado e se aceito. tambem impede a repetição de caracterer
+   static int position, old_position; //qual foi apertado
+   static int8 cnt=0; //para debounce
+   entry=0;//começa sempre como 0. se alguma tecla for apertada ele ai a 1
+   for(line=0;line<4;line++)
+   {
+      get_line(line);
+      delay_us(10);
+      for(row=0; row<4; row++)
+      {
+         if(input(row+PIN_B4))//lendo no 18f4550.h vemos que os pinos b4-b7 sao 31756-31759
+            { 
+            old_position=position;
+            position=calc(line,row);
+            entry=1;
+            if(cnt>=TIME && entry && position==old_position && !done) //se passou tempo suficieete para aceitar a tecla e ainda nao foi lida
+            {
+               done=1;
+               ok=0;//diz que esse digito ainda nao veio ao mundo
+               //usado na lcd_update;
+               key=position;
+            }
+            if(position!=old_position){//no caso de apertar um botao e depois apertar outro sem soltar o primeiro;
+               cnt=0;
+            }
+         }  
+      }
+      }
+      if(!entry){
+      cnt=0;
+      done=0;
+      }
+      if(position==old_position && cnt<TIME){//se a mesma tecla continua pressionada
+      cnt=cnt+1;
+      }
+   }
+   
+
+
+void input_code( )//reponsavel por dar significado as teclas
+{
+   //um monte de switches
+   if(done && !ok)//se ainda nao fez a atribuicao
+   {
+      switch(key)
+      {
+         case 0:
+            character='7';
+            break;
+         case 1:
+            character='8';
+            break;
+         case 2:
+            character='9';
+            break;
+         case 3:
+            character='/';
+            break;
+         case 4:
+            character='4';
+            break;
+         case 5:
+            character='5';
+            break;
+         case 6:
+            character='6';
+            break;
+         case 7:
+            character='X';
+            break;
+         case 8:
+            character='1';
+            break;
+         case 9:
+            character='2';
+            break;
+         case 10:
+            character='3';
+            break;
+         case 11:
+            character='-';
+            break;
+         case 12:
+            character='C';
+            break;
+         case 13:
+            character='0';
+            break;
+         case 14:
+            character='=';
+            break;
+         case 15:
+            character='+';
+            break;
+         default:
+            character='!';
+            break;
+      
+      }
+   }
+}
+
+void lcd_update()// somente ela fala com o lcd
+{
+   if(!ok)
+   {
+      ok=1;
+      printf(lcd_putc,"%c",character);
+      character=0;
+   }
+}
+
+void main()
+{
+   lcd_init();
+   set_tris_b(0xf0);// bits 7-4 sao colunas e 3-0 sao linhas
+   port_b_pullups(false);//n fac ideia do pq
+   while(true)
+   {
+      keypad_scan();//le o teclado e devolve posicao
+      input_code();//atribui significado ao botao
+      lcd_update();//manda pro lcd
+   }
+}
+/*input_code atualizar a string str quando uma nova tecla for pressionada
+  lcd_update atualizar o lcd apenas quando a string str mudar*/

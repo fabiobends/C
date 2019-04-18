@@ -1,0 +1,136 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005-006 MAIN.cnt
+005-008 atan2.y
+007-008 MAIN.pwmS
+009-00C atan2.x
+009     @delay_ms1.P1
+009     MAIN.@SCRATCH1
+00A     MAIN.@SCRATCH2
+00B     MAIN.@SCRATCH3
+00C     MAIN.@SCRATCH4
+00D-010 atan2.z
+00D-010 sin.x
+00D-010 @DIVFF.P1
+00D     MAIN.@SCRATCH5
+00E     MAIN.@SCRATCH6
+00F     MAIN.@SCRATCH7
+010     MAIN.@SCRATCH8
+011-014 @DIVFF.P1
+011.0   atan2.sign
+011     sin.@SCRATCH1
+012     atan2.quad
+012     sin.@SCRATCH2
+013     sin.@SCRATCH3
+014     sin.@SCRATCH4
+015-018 cos.x
+015     @DIVFF.@SCRATCH1
+016     @DIVFF.@SCRATCH2
+017     @DIVFF.@SCRATCH3
+018     @DIVFF.@SCRATCH4
+019-01C cos.y
+019     @DIVFF.@SCRATCH5
+01A     @DIVFF.@SCRATCH6
+01D-020 cos.t
+021-024 cos.t2
+025     cos.quad
+026     cos.i
+027-02A cos.frac
+02B-03E cos.p
+03F-042 @FLT.P1
+03F-042 @SFTOI.P2
+03F     cos.@SCRATCH1
+040     cos.@SCRATCH2
+041     cos.@SCRATCH3
+042     cos.@SCRATCH4
+043-046 @MULFF.P1
+043-044 @ITOF.P2
+043-046 @ADDFF.P3
+043-046 @FLT.P4
+047-04A @MULFF.P1
+047-04A @ADDFF.P2
+047     @FLT.@SCRATCH1
+048     @FLT.@SCRATCH2
+04B     @MULFF.@SCRATCH1
+04B     @ADDFF.@SCRATCH1
+04C     @MULFF.@SCRATCH2
+04C     @ADDFF.@SCRATCH2
+04D     @MULFF.@SCRATCH3
+04D     @ADDFF.@SCRATCH3
+04E     @ADDFF.@SCRATCH4
+04F     @ADDFF.@SCRATCH5
+050     @ADDFF.@SCRATCH6
+051     @ADDFF.@SCRATCH7
+052     @ADDFF.@SCRATCH8
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @ITOF
+000048  @DIVFF
+0001A4  @MULFF
+000296  @ADDFF
+000500  @FLT
+000578  @SFTOI
+0005B0  cos
+0008EC  sin
+000936  @delay_ms1
+00095E  MAIN
+00095E  @cinit1
+00096E  @cinit2
+
+Project Directory:
+    C:\Users\Fábio Bends\Documents\PIC\lab09\
+
+Project Files:
+    lab09.c                                                 [06-jul-17 10:35  CRC=2C8C95EE]
+    lab09.h                                                 [16-jun-17 09:49  CRC=00000000]
+    ..\..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h [24-fev-17 16:24  CRC=AD4A1276]
+    ..\..\..\..\..\Program Files (x86)\PICC\drivers\math.h  [22-set-16 08:36  CRC=9CF8C837]
+
+Source signature=13C838D2
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=13C9
+
+Units:
+    lab09 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   lab09.xsym
+    Errors:      lab09.err
+    Ext Symbols: lab09.esym
+    INHX32:      lab09.hex
+    Symbols:     lab09.sym
+    List:        lab09.lst
+    Debug/COFF:  lab09.cof
+    Project:     lab09.ccspjt
+    Call Tree:   lab09.tre
+    Statistics:  lab09.STA
