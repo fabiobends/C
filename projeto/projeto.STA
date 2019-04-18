@@ -1,0 +1,61 @@
+
+ROM used:   2652/32768 (8%)
+            2652/32768 (8%) including unused fragments
+
+            1.6 Average locations per line
+            9.0 Average locations per statement
+
+RAM used:   36/2048 (2%) at main() level
+            87/2048 (4%) worst case
+
+Stack used: 6 worst case (4 in main + 2 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  127    71  24  projeto.c
+    5     0   0  projeto.h
+  842     0   0  ..\..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h
+  643   224  76  ..\..\..\..\..\Program Files (x86)\PICC\drivers\glcd.c
+----- -----
+ 1617   295 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0    134   3    1    555  3.4  glcd_init
+0    172   3    6    734  7.1  glcd_pixel
+0    372   7   15   1634  8.6  glcd_line
+0     74   1    2             @MUL88
+0    154   3    8    743  5.9  glcd_rect
+0    114   2    4    498  4.8  glcd_fillScreen
+0     52   1    2    247  3.2  glcd_writeByte
+0     84   2    2    408  3.2  glcd_readByte
+0    152   3    4    168  4.9  timer2_isr
+0     86   2   14             @MUL3232
+0    228   4   14             @DIVS3232
+0    372   7   15    400  5.7  representacao
+0    306   6    4   2082  5.5  quadro_osc
+0    182   3    0    586  5.3  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               11
+    Statements              295
+    Comments                454
+    Volume (V)              12184
+    Difficulty (D)          57.8
+    Effort to implement (E) 704663
+    Time to implement (T)   10 hours, 52 minutes
+    Est Delivered Bugs (B)  3
+    Cyclomatic Complexity   26
+    Maintainability (MI)    56
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000AC   166  0  
+000AE-07FFE  2482  30112  
+
+
+

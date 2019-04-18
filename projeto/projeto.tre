@@ -1,0 +1,86 @@
+ÀÄprojeto
+   ÃÄMAIN  0/182  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄglcd_init  0/134  Ram=1
+   ³  ³  ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³  ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³  ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³  ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³  ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³  ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³  ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³  ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³  ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³  ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³  ÀÄglcd_fillScreen  0/114  Ram=4
+   ³  ³     ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³     ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³     ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³     ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³     ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³     ÀÄglcd_writeByte  0/52  Ram=2
+   ³  ÃÄquadro_osc  0/306  Ram=4
+   ³  ³  ÃÄglcd_fillScreen  0/114  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄglcd_rect  0/154  Ram=8
+   ³  ³  ³  ÃÄglcd_line  0/372  Ram=15
+   ³  ³  ³  ³  ÃÄ@MUL88  0/74  Ram=2
+   ³  ³  ³  ³  ÃÄglcd_pixel  0/172  Ram=6
+   ³  ³  ³  ³  ³  ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³  ³  ³  ³  ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³  ³  ³  ³  ÃÄglcd_readByte  0/84  Ram=2
+   ³  ³  ³  ³  ³  ÃÄglcd_writeByte  0/52  Ram=2
+   ³  ³  ³  ³  ³  ÀÄglcd_writeByte  0/52  Ram=2
+   ³  ³  ³  ³  ÃÄ@MUL88  0/74  Ram=2
+   ³  ³  ³  ³  ÃÄ@MUL88  0/74  Ram=2
+   ³  ³  ³  ³  ÃÄ@MUL88  0/74  Ram=2
+   ³  ³  ³  ³  ÃÄ@MUL88  0/74  Ram=2
+   ³  ³  ³  ³  ÃÄglcd_pixel  0/172  Ram=6
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄ@MUL88  0/74  Ram=2
+   ³  ³  ³  ³  ÃÄ@MUL88  0/74  Ram=2
+   ³  ³  ³  ³  ÀÄ@MUL88  0/74  Ram=2
+   ³  ³  ³  ÃÄglcd_line  0/372  Ram=15
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄglcd_line  0/372  Ram=15
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄglcd_line  0/372  Ram=15
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÀÄglcd_line  0/372  Ram=15
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄglcd_line  0/372  Ram=15
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄglcd_pixel  0/172  Ram=6
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄglcd_pixel  0/172  Ram=6
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄglcd_pixel  0/172  Ram=6
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄglcd_pixel  0/172  Ram=6
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄglcd_pixel  0/172  Ram=6
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄglcd_pixel  0/172  Ram=6
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄglcd_pixel  0/172  Ram=6
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄglcd_pixel  0/172  Ram=6
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄglcd_line  0/372  Ram=15
+   ³  ³     ÀÄ*
+   ³  ÃÄrepresentacao  0/372  Ram=15
+   ³  ³  ÃÄ@DIVS3232  0/228  Ram=14
+   ³  ³  ÃÄ@DIVS3232  0/228  Ram=14
+   ³  ³  ÃÄglcd_pixel  0/172  Ram=6
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@DIVS3232  0/228  Ram=14
+   ³  ³  ÃÄ@DIVS3232  0/228  Ram=14
+   ³  ³  ÀÄglcd_pixel  0/172  Ram=6
+   ³  ³     ÀÄ*
+   ³  ÃÄquadro_osc  0/306  Ram=4
+   ³  ³  ÀÄ*
+   ³  ÀÄrepresentacao  0/372  Ram=15
+   ³     ÀÄ*
+   ÀÄtimer2_isr  0/152  Ram=4
+      ÃÄ@MUL3232  0/86  Ram=14
+      ÀÄ@DIVS3232  0/228  Ram=14

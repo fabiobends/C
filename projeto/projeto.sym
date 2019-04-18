@@ -1,0 +1,179 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019     @INTERRUPT_AREA
+01A-01D tensao
+01E-021 val
+022     cnt
+023     ponto
+024     glcd_init.mode
+024     quadro_osc.state
+024-027 representacao.value
+025     quadro_osc.distance
+026     quadro_osc.i
+027     glcd_fillScreen.color
+027     glcd_rect.x1
+027     quadro_osc.@SCRATCH1
+028     representacao.point
+028     glcd_fillScreen.i
+028     glcd_rect.y1
+029     glcd_fillScreen.j
+029     glcd_rect.x2
+029     representacao.@SCRATCH1
+02A     glcd_rect.y2
+02A     glcd_fillScreen.@SCRATCH1
+02A     representacao.@SCRATCH2
+02B     glcd_rect.fill
+02B     representacao.@SCRATCH3
+02C     glcd_rect.color
+02C     representacao.@SCRATCH4
+02D     glcd_rect.y
+02D     representacao.@SCRATCH5
+02E     glcd_rect.ymax
+02E     representacao.@SCRATCH6
+02F     glcd_line.x1
+02F     representacao.@SCRATCH7
+030     glcd_line.y1
+030     representacao.@SCRATCH8
+031     glcd_line.x2
+031     representacao.@SCRATCH9
+032     glcd_line.y2
+032     representacao.@SCRATCH10
+033     glcd_line.color
+034     glcd_line.x
+035     glcd_line.y
+036     glcd_line.addx
+037     glcd_line.addy
+038     glcd_line.dx
+039     glcd_line.dy
+03A-03B glcd_line.P
+03C     glcd_line.i
+03D     glcd_pixel.x
+03D     glcd_line.@SCRATCH1
+03E     @MUL88.P1
+03E     glcd_pixel.y
+03F     @MUL88.P1
+03F     glcd_pixel.color
+040     glcd_pixel.data
+041     glcd_pixel.chip
+042     glcd_readByte.chip
+042     glcd_pixel.@SCRATCH1
+043     glcd_writeByte.chip
+043     glcd_readByte.data
+044     glcd_writeByte.data
+045-048 @MUL3232.P1
+045     timer2_isr.@SCRATCH1
+046     timer2_isr.@SCRATCH2
+047     timer2_isr.@SCRATCH3
+048     timer2_isr.@SCRATCH4
+049-04C @DIVS3232.P1
+049-04C @MUL3232.P2
+04D-050 @DIVS3232.P1
+04D     @MUL3232.@SCRATCH1
+04E     @MUL3232.@SCRATCH2
+04F     @MUL3232.@SCRATCH3
+050     @MUL3232.@SCRATCH4
+051     @MUL3232.@SCRATCH5
+051     @DIVS3232.@SCRATCH1
+052     @MUL3232.@SCRATCH6
+052     @DIVS3232.@SCRATCH2
+053     @DIVS3232.@SCRATCH3
+054     @DIVS3232.@SCRATCH4
+055     @DIVS3232.@SCRATCH5
+056     @DIVS3232.@SCRATCH6
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000AE  @MUL3232
+000104  @DIVS3232
+0001E8  timer2_isr
+000280  glcd_writeByte
+0002B4  glcd_fillScreen
+000326  glcd_init
+0003AC  @MUL88
+0003F6  glcd_readByte
+00044A  glcd_pixel
+0004F6  glcd_line
+00066A  glcd_rect
+000704  quadro_osc
+000836  representacao
+0009AA  @cinit1
+0009AA  MAIN
+0009C2  @cinit2
+
+Project Directory:
+    C:\Users\Fábio Bends\Documents\PIC\projeto\
+
+Project Files:
+    projeto.c                                               [20-jun-17 09:53  CRC=74DDB290]
+    projeto.h                                               [29-mai-17 15:03  CRC=00000000]
+    ..\..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h [24-fev-17 16:24  CRC=AD4A1276]
+    ..\..\..\..\..\Program Files (x86)\PICC\drivers\glcd.c  [18-nov-05 08:48  CRC=C6ACD324]
+
+Source signature=AF816B4E
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=4DCA
+
+Units:
+    projeto (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   projeto.xsym
+    Errors:      projeto.err
+    Ext Symbols: projeto.esym
+    INHX32:      projeto.hex
+    Symbols:     projeto.sym
+    List:        projeto.lst
+    Debug/COFF:  projeto.cof
+    Project:     projeto.ccspjt
+    Call Tree:   projeto.tre
+    Statistics:  projeto.STA
