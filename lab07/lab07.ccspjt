@@ -1,0 +1,72 @@
+[PROJECT]
+Target=lab07.hex
+Processor_Text=PIC18F4550
+CCSVerions=5.070
+Compiler=PCH
+CCSVersion=5.070
+[Target Data]
+FileList=lab07.c
+[Directories]
+Include=
+[C:\Users\Fábio Bends\Documents\PIC\lab07\lab07]
+Type=4
+[mru-list]
+1=lab07.c
+
+[ProjectLog]
+Days=4
+D1=26-05-2017
+D1_L=6
+D1_L1=[35163]Project Opened.
+D1_L2=[35196]Started Editing.
+D1_L3=[35815]Stopped Editing.
+D1_L4=[36241]Started Editing.
+D1_L5=[37098]Stopped Editing.
+TotalEdit=35
+TotalDebug=0
+D1_E=20
+D1_D=0
+D1_L6=[37098]Project Closed.
+D2=28-05-2017
+D2_L=2
+D2_L1=[39669]Project Opened.
+D2_L2=[39675]Project Closed.
+D3=29-05-2017
+D3_L=8
+D3_L1=[51919]Project Opened.
+D3_L2=[54007]Project Closed.
+D3_L3=[84557]Project Opened.
+D3_L4=[84809]Started Editing.
+D3_L5=[85338]Stopped Editing.
+D3_L6=[85433]Started Editing.
+D3_L7=[85785]Stopped Editing.
+D3_E=10
+D3_D=0
+D3_L8=[85873]Project Closed.
+D4=30-05-2017
+D4_L=6
+D4_L1=[684]Project Opened.
+D4_L2=[760]Started Editing.
+D4_L3=[785]Stopped Editing.
+D4_E=5
+D4_D=0
+D4_L4=[1009]Started Editing.
+D4_L5=[1242]Stopped Editing.
+D4_L6=[1242]Project Closed.
+
+[Opened Files]
+1=lab07.c
+t1=1
+2=lab07.h
+t2=1
+Count=3
+3=..\..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h
+t3=1
+[lab07.c]
+Type=4
+
+[defines]
+buildcount=5
+[Units]
+Count=1
+1=lab07 (main)

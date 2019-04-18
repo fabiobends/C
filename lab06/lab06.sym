@@ -1,0 +1,108 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-005 @sprintf_string
+006-007 MAIN.cnt
+008     lcd_init.i
+008-009 @PRINTF_LD_655.P1
+008     MAIN.@SCRATCH1
+008     @PSTRINGC_655.@SCRATCH1
+009-00C lcd_init.LCD_INIT_STRING
+009     @PSTRINGC_655.@SCRATCH2
+00A     @PRINTF_LD_655.@SCRATCH1
+00B     @PRINTF_LD_655.@SCRATCH2
+00C     @PRINTF_LD_655.@SCRATCH3
+00D     lcd_init.@SCRATCH1
+00D     @PRINTF_LD_655.@SCRATCH4
+00E     @PRINTF_LD_655.@SCRATCH5
+00F     @PRINTF_LD_655.@SCRATCH6
+010     @PRINTF_LD_655.@SCRATCH7
+011     lcd_putc.c
+012     @delay_ms1.P1
+012     lcd_gotoxy.x
+013     lcd_gotoxy.y
+014     lcd_gotoxy.address
+015     lcd_gotoxy.@SCRATCH1
+016     lcd_send_byte.address
+017     lcd_send_byte.n
+018     lcd_read_byte.low
+018     lcd_send_byte.@SCRATCH1
+019     lcd_read_byte.high
+019     lcd_send_nibble.n
+01A     lcd_read_byte.@SCRATCH1
+F83     PSP_DATA
+F83     lcd
+F8C     lcdlat
+F95     lcdtris
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @const671.call
+00000C  @delay_ms1
+000036  lcd_send_nibble
+000054  lcd_read_nibble
+000060  lcd_read_byte
+0000A2  lcd_send_byte
+0000DC  lcd_init
+000150  lcd_gotoxy
+000172  lcd_putc
+0001C2  @PSTRINGC_655
+0001E4  @PRINTF_LD_655
+0002D8  MAIN
+0002D8  @cinit1
+0002EC  @cinit2
+
+Project Directory:
+    C:\Users\Fábio Bends\Documents\PIC\lab06\
+
+Project Files:
+    lab06.c                                                 [31-mai-17 08:16  CRC=9C4CF316]
+    lab06.h                                                 [31-mai-17 08:14  CRC=00000000]
+    ..\..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h [24-fev-17 16:24  CRC=AD4A1276]
+    ..\..\..\..\..\Program Files (x86)\PICC\drivers\LCD.C   [22-fev-16 09:05  CRC=D1A6378A]
+
+Source signature=ECE374A0
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=21FE
+
+Units:
+    lab06 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   lab06.xsym
+    Errors:      lab06.err
+    Ext Symbols: lab06.esym
+    INHX32:      lab06.hex
+    Symbols:     lab06.sym
+    List:        lab06.lst
+    Debug/COFF:  lab06.cof
+    Project:     lab06.ccspjt
+    Call Tree:   lab06.tre
+    Statistics:  lab06.STA

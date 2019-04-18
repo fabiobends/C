@@ -1,0 +1,904 @@
+CCS PCH C Compiler, Version 5.070, 56587               30-mai-17 00:19
+
+               Filename:   C:\Users\Fábio Bends\Documents\PIC\lab07\lab07.lst
+
+               ROM used:   816 bytes (2%)
+                           Largest free fragment is 31952
+               RAM used:   12 (1%) at main() level
+                           31 (2%) worst case
+               Stack used: 5 locations
+               Stack size: 31
+
+*
+0000:  GOTO   02A0
+.................... #include <lab07.h> 
+.................... #include <18F4550.h> 
+.................... //////////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F4550 
+0004:  DATA 64,65
+0006:  DATA 6C,74
+0008:  DATA 61,54
+000A:  DATA 3D,20
+000C:  DATA 25,4C
+000E:  DATA 75,20
+0010:  DATA 75,73
+0012:  DATA 00,00
+*
+01C6:  TBLRD*+
+01C8:  MOVFF  FF6,0D
+01CC:  MOVFF  FF7,0E
+01D0:  MOVFF  FF5,15
+01D4:  RCALL  0176
+01D6:  MOVFF  0D,FF6
+01DA:  MOVFF  0E,FF7
+01DE:  DECFSZ 0C,F
+01E0:  BRA    01C6
+01E2:  RETURN 0
+01E4:  MOVFF  FEA,14
+01E8:  MOVFF  FE9,13
+01EC:  SWAPF  0D,W
+01EE:  IORLW  F0
+01F0:  MOVWF  0F
+01F2:  ADDWF  0F,F
+01F4:  ADDLW  E2
+01F6:  MOVWF  10
+01F8:  ADDLW  32
+01FA:  MOVWF  12
+01FC:  MOVF   0D,W
+01FE:  ANDLW  0F
+0200:  ADDWF  10,F
+0202:  ADDWF  10,F
+0204:  ADDWF  12,F
+0206:  ADDLW  E9
+0208:  MOVWF  11
+020A:  ADDWF  11,F
+020C:  ADDWF  11,F
+020E:  SWAPF  0C,W
+0210:  ANDLW  0F
+0212:  ADDWF  11,F
+0214:  ADDWF  12,F
+0216:  RLCF   11,F
+0218:  RLCF   12,F
+021A:  COMF   12,F
+021C:  RLCF   12,F
+021E:  MOVF   0C,W
+0220:  ANDLW  0F
+0222:  ADDWF  12,F
+0224:  RLCF   0F,F
+0226:  MOVLW  07
+0228:  MOVWF  0E
+022A:  MOVLW  0A
+022C:  DECF   11,F
+022E:  ADDWF  12,F
+0230:  BNC   022C
+0232:  DECF   10,F
+0234:  ADDWF  11,F
+0236:  BNC   0232
+0238:  DECF   0F,F
+023A:  ADDWF  10,F
+023C:  BNC   0238
+023E:  DECF   0E,F
+0240:  ADDWF  0F,F
+0242:  BNC   023E
+0244:  CLRF   FEA
+0246:  MOVLW  0E
+0248:  MOVWF  FE9
+024A:  MOVLW  07
+024C:  ANDWF  13,W
+024E:  BCF    13.6
+0250:  ADDWF  FE9,F
+0252:  MOVLW  00
+0254:  ADDWFC FEA,F
+0256:  MOVF   FE9,W
+0258:  SUBLW  12
+025A:  BNZ   0262
+025C:  MOVF   FEA,F
+025E:  BNZ   0262
+0260:  BSF    13.6
+0262:  MOVF   FEF,W
+0264:  MOVWF  00
+0266:  BNZ   0278
+0268:  BTFSC  13.6
+026A:  BRA    0278
+026C:  BTFSC  13.4
+026E:  BRA    0296
+0270:  BTFSC  13.3
+0272:  BRA    0278
+0274:  MOVLW  20
+0276:  BRA    027E
+0278:  BSF    13.3
+027A:  BCF    13.4
+027C:  MOVLW  30
+027E:  ADDWF  00,F
+0280:  MOVFF  FEA,0D
+0284:  MOVFF  FE9,0C
+0288:  MOVFF  00,15
+028C:  RCALL  0176
+028E:  MOVFF  0D,FEA
+0292:  MOVFF  0C,FE9
+0296:  MOVF   FEE,W
+0298:  BTFSS  13.6
+029A:  BRA    0256
+029C:  GOTO   031E (RETURN)
+....................  
+.................... #list 
+....................  
+.................... #device ADC=10 
+.................... #use delay(crystal=20000000) 
+*
+0014:  CLRF   FEA
+0016:  MOVLW  16
+0018:  MOVWF  FE9
+001A:  MOVF   FEF,W
+001C:  BZ    0038
+001E:  MOVLW  06
+0020:  MOVWF  01
+0022:  CLRF   00
+0024:  DECFSZ 00,F
+0026:  BRA    0024
+0028:  DECFSZ 01,F
+002A:  BRA    0022
+002C:  MOVLW  7B
+002E:  MOVWF  00
+0030:  DECFSZ 00,F
+0032:  BRA    0030
+0034:  DECFSZ FEF,F
+0036:  BRA    001E
+0038:  RETURN 0
+....................  
+....................  
+.................... #include <LCD.C> 
+.................... /////////////////////////////////////////////////////////////////////////////// 
+.................... ////                             LCD.C                                     //// 
+.................... ////                 Driver for common LCD modules                         //// 
+.................... ////                                                                       //// 
+.................... ////  lcd_init()   Must be called before any other function.               //// 
+.................... ////                                                                       //// 
+.................... ////  lcd_putc(c)  Will display c on the next position of the LCD.         //// 
+.................... ////                 \a  Set cursor position to upper left                 //// 
+.................... ////                 \f  Clear display, set cursor to upper left           //// 
+.................... ////                 \n  Go to start of second line                        //// 
+.................... ////                 \b  Move back one position                            //// 
+.................... ////              If LCD_EXTENDED_NEWLINE is defined, the \n character     //// 
+.................... ////              will erase all remanining characters on the current      //// 
+.................... ////              line, and move the cursor to the beginning of the next   //// 
+.................... ////              line.                                                    //// 
+.................... ////              If LCD_EXTENDED_NEWLINE is defined, the \r character     //// 
+.................... ////              will move the cursor to the start of the current         //// 
+.................... ////              line.                                                    //// 
+.................... ////                                                                       //// 
+.................... ////  lcd_gotoxy(x,y) Set write position on LCD (upper left is 1,1)        //// 
+.................... ////                                                                       //// 
+.................... ////  lcd_getc(x,y)   Returns character at position x,y on LCD             //// 
+.................... ////                                                                       //// 
+.................... ////  lcd_cursor_on(int1 on)   Turn the cursor on (on=TRUE) or off         //// 
+.................... ////              (on=FALSE).                                              //// 
+.................... ////                                                                       //// 
+.................... ////  lcd_set_cgram_char(w, *p)   Write a custom character to the CGRAM.   //// 
+.................... ////                                                                       //// 
+.................... ////                                                                       //// 
+.................... ////  CONFIGURATION                                                        //// 
+.................... ////  The LCD can be configured in one of two ways: a.) port access or     //// 
+.................... ////  b.) pin access.  Port access requires the entire 7 bit interface     //// 
+.................... ////  connected to one GPIO port, and the data bits (D4:D7 of the LCD)     //// 
+.................... ////  connected to sequential pins on the GPIO.  Pin access                //// 
+.................... ////  has no requirements, all 7 bits of the control interface can         //// 
+.................... ////  can be connected to any GPIO using several ports.                    //// 
+.................... ////                                                                       //// 
+.................... ////  To use port access, #define LCD_DATA_PORT to the SFR location of     //// 
+.................... ////  of the GPIO port that holds the interface, -AND- edit LCD_PIN_MAP    //// 
+.................... ////  of this file to configure the pin order.  If you are using a         //// 
+.................... ////  baseline PIC (PCB), then LCD_OUTPUT_MAP and LCD_INPUT_MAP also must  //// 
+.................... ////  be defined.                                                          //// 
+.................... ////                                                                       //// 
+.................... ////  Example of port access:                                              //// 
+.................... ////     #define LCD_DATA_PORT getenv("SFR:PORTD")                         //// 
+.................... ////                                                                       //// 
+.................... ////  To use pin access, the following pins must be defined:               //// 
+.................... ////     LCD_ENABLE_PIN                                                    //// 
+.................... ////     LCD_RS_PIN                                                        //// 
+.................... ////     LCD_RW_PIN                                                        //// 
+.................... ////     LCD_DATA4                                                         //// 
+.................... ////     LCD_DATA5                                                         //// 
+.................... ////     LCD_DATA6                                                         //// 
+.................... ////     LCD_DATA7                                                         //// 
+.................... ////                                                                       //// 
+.................... ////  Example of pin access:                                               //// 
+.................... ////     #define LCD_ENABLE_PIN  PIN_E0                                    //// 
+.................... ////     #define LCD_RS_PIN      PIN_E1                                    //// 
+.................... ////     #define LCD_RW_PIN      PIN_E2                                    //// 
+.................... ////     #define LCD_DATA4       PIN_D4                                    //// 
+.................... ////     #define LCD_DATA5       PIN_D5                                    //// 
+.................... ////     #define LCD_DATA6       PIN_D6                                    //// 
+.................... ////     #define LCD_DATA7       PIN_D7                                    //// 
+.................... ////                                                                       //// 
+.................... /////////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996,2010 Custom Computer Services           //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+....................  
+.................... #ifndef __LCD_C__ 
+.................... #define __LCD_C__ 
+....................  
+.................... // define the pinout. 
+.................... // only required if port access is being used. 
+.................... typedef struct   
+.................... {                            // This structure is overlayed 
+....................    int1 enable;           // on to an I/O port to gain 
+....................    int1 rs;               // access to the LCD pins. 
+....................    int1 rw;               // The bits are allocated from 
+....................    int1 unused;           // low order up.  ENABLE will 
+....................    unsigned int     data : 4;         // be LSB pin of that port. 
+....................   #if defined(__PCD__)       // The port used will be LCD_DATA_PORT. 
+....................    unsigned int    reserved: 8; 
+....................   #endif 
+.................... } LCD_PIN_MAP; 
+....................  
+.................... // this is to improve compatability with previous LCD drivers that accepted 
+.................... // a define labeled 'use_portb_lcd' that configured the LCD onto port B. 
+.................... #if ((defined(use_portb_lcd)) && (use_portb_lcd==TRUE)) 
+....................  #define LCD_DATA_PORT getenv("SFR:PORTB") 
+.................... #endif 
+....................  
+.................... #if defined(__PCB__) 
+....................    // these definitions only need to be modified for baseline PICs. 
+....................    // all other PICs use LCD_PIN_MAP or individual LCD_xxx pin definitions. 
+.................... /*                                    EN, RS,   RW,   UNUSED,  DATA  */ 
+....................  const LCD_PIN_MAP LCD_OUTPUT_MAP =  {0,  0,    0,    0,       0}; 
+....................  const LCD_PIN_MAP LCD_INPUT_MAP =   {0,  0,    0,    0,       0xF}; 
+.................... #endif 
+....................  
+.................... ////////////////////// END CONFIGURATION /////////////////////////////////// 
+....................  
+.................... #ifndef LCD_ENABLE_PIN 
+....................    #define lcd_output_enable(x) lcdlat.enable=x 
+....................    #define lcd_enable_tris()   lcdtris.enable=0 
+.................... #else 
+....................    #define lcd_output_enable(x) output_bit(LCD_ENABLE_PIN, x) 
+....................    #define lcd_enable_tris()  output_drive(LCD_ENABLE_PIN) 
+.................... #endif 
+....................  
+.................... #ifndef LCD_RS_PIN 
+....................    #define lcd_output_rs(x) lcdlat.rs=x 
+....................    #define lcd_rs_tris()   lcdtris.rs=0 
+.................... #else 
+....................    #define lcd_output_rs(x) output_bit(LCD_RS_PIN, x) 
+....................    #define lcd_rs_tris()  output_drive(LCD_RS_PIN) 
+.................... #endif 
+....................  
+.................... #ifndef LCD_RW_PIN 
+....................    #define lcd_output_rw(x) lcdlat.rw=x 
+....................    #define lcd_rw_tris()   lcdtris.rw=0 
+.................... #else 
+....................    #define lcd_output_rw(x) output_bit(LCD_RW_PIN, x) 
+....................    #define lcd_rw_tris()  output_drive(LCD_RW_PIN) 
+.................... #endif 
+....................  
+.................... // original version of this library incorrectly labeled LCD_DATA0 as LCD_DATA4, 
+.................... // LCD_DATA1 as LCD_DATA5, and so on.  this block of code makes the driver 
+.................... // compatible with any code written for the original library 
+.................... #if (defined(LCD_DATA0) && defined(LCD_DATA1) && defined(LCD_DATA2) && defined(LCD_DATA3) && !defined(LCD_DATA4) && !defined(LCD_DATA5) && !defined(LCD_DATA6) && !defined(LCD_DATA7)) 
+....................    #define  LCD_DATA4    LCD_DATA0 
+....................    #define  LCD_DATA5    LCD_DATA1 
+....................    #define  LCD_DATA6    LCD_DATA2 
+....................    #define  LCD_DATA7    LCD_DATA3 
+.................... #endif 
+....................  
+.................... #ifndef LCD_DATA4 
+.................... #ifndef LCD_DATA_PORT 
+....................    #if defined(__PCB__) 
+....................       #define LCD_DATA_PORT      0x06     //portb 
+....................       #define set_tris_lcd(x)   set_tris_b(x) 
+....................    #else 
+....................      #if defined(PIN_D0) 
+....................       #define LCD_DATA_PORT      getenv("SFR:PORTD")     //portd 
+....................      #else 
+....................       #define LCD_DATA_PORT      getenv("SFR:PORTB")     //portb 
+....................      #endif 
+....................    #endif    
+.................... #endif 
+....................  
+.................... #if defined(__PCB__) 
+....................    LCD_PIN_MAP lcd, lcdlat; 
+....................    #byte lcd = LCD_DATA_PORT 
+....................    #byte lcdlat = LCD_DATA_PORT 
+.................... #elif defined(__PCM__) 
+....................    LCD_PIN_MAP lcd, lcdlat, lcdtris; 
+....................    #byte lcd = LCD_DATA_PORT 
+....................    #byte lcdlat = LCD_DATA_PORT 
+....................    #byte lcdtris = LCD_DATA_PORT+0x80 
+.................... #elif defined(__PCH__) 
+....................    LCD_PIN_MAP lcd, lcdlat, lcdtris; 
+....................    #byte lcd = LCD_DATA_PORT 
+....................    #byte lcdlat = LCD_DATA_PORT+9 
+....................    #byte lcdtris = LCD_DATA_PORT+0x12 
+.................... #elif defined(__PCD__) 
+....................    LCD_PIN_MAP lcd, lcdlat, lcdtris; 
+....................    #word lcd = LCD_DATA_PORT 
+....................    #word lcdlat = LCD_DATA_PORT+2 
+....................    #word lcdtris = LCD_DATA_PORT-0x02 
+.................... #endif 
+.................... #endif   //LCD_DATA4 not defined 
+....................  
+.................... #ifndef LCD_TYPE 
+....................    #define LCD_TYPE 2           // 0=5x7, 1=5x10, 2=2 lines 
+.................... #endif 
+....................  
+.................... #ifndef LCD_LINE_TWO 
+....................    #define LCD_LINE_TWO 0x40    // LCD RAM address for the second line 
+.................... #endif 
+....................  
+.................... #ifndef LCD_LINE_LENGTH 
+....................    #define LCD_LINE_LENGTH 20 
+.................... #endif 
+....................  
+.................... unsigned int8 lcd_read_nibble(void); 
+....................  
+.................... unsigned int8 lcd_read_byte(void) 
+.................... { 
+....................    unsigned int8 low,high; 
+....................  
+....................  #if defined(__PCB__) 
+....................    set_tris_lcd(LCD_INPUT_MAP); 
+....................  #else 
+....................   #if (defined(LCD_DATA4) && defined(LCD_DATA5) && defined(LCD_DATA6) && defined(LCD_DATA7)) 
+....................    output_float(LCD_DATA4); 
+....................    output_float(LCD_DATA5); 
+....................    output_float(LCD_DATA6); 
+....................    output_float(LCD_DATA7); 
+....................   #else 
+....................    lcdtris.data = 0xF; 
+*
+0064:  MOVLW  0F
+0066:  ANDWF  F95,W
+0068:  IORLW  F0
+006A:  MOVWF  F95
+....................   #endif 
+....................  #endif 
+....................          
+....................    lcd_output_rw(1); 
+006C:  BSF    F8C.2
+....................    delay_cycles(1); 
+006E:  NOP   
+....................    lcd_output_enable(1); 
+0070:  BSF    F8C.0
+....................    delay_cycles(1); 
+0072:  NOP   
+....................    high = lcd_read_nibble(); 
+0074:  RCALL  0058
+0076:  MOVFF  01,1D
+....................        
+....................    lcd_output_enable(0); 
+007A:  BCF    F8C.0
+....................    delay_cycles(1); 
+007C:  NOP   
+....................    lcd_output_enable(1); 
+007E:  BSF    F8C.0
+....................    delay_us(1); 
+0080:  BRA    0082
+0082:  BRA    0084
+0084:  NOP   
+....................    low = lcd_read_nibble(); 
+0086:  RCALL  0058
+0088:  MOVFF  01,1C
+....................        
+....................    lcd_output_enable(0); 
+008C:  BCF    F8C.0
+....................  
+....................  #if defined(__PCB__) 
+....................    set_tris_lcd(LCD_OUTPUT_MAP); 
+....................  #else 
+....................   #if (defined(LCD_DATA4) && defined(LCD_DATA5) && defined(LCD_DATA6) && defined(LCD_DATA7)) 
+....................    output_drive(LCD_DATA4); 
+....................    output_drive(LCD_DATA5); 
+....................    output_drive(LCD_DATA6); 
+....................    output_drive(LCD_DATA7); 
+....................   #else 
+....................    lcdtris.data = 0x0; 
+008E:  MOVLW  0F
+0090:  ANDWF  F95,W
+0092:  MOVWF  F95
+....................   #endif 
+....................  #endif 
+....................  
+....................    return( (high<<4) | low); 
+0094:  SWAPF  1D,W
+0096:  MOVWF  00
+0098:  MOVLW  F0
+009A:  ANDWF  00,F
+009C:  MOVF   00,W
+009E:  IORWF  1C,W
+00A0:  MOVWF  01
+00A2:  GOTO   00B0 (RETURN)
+.................... } 
+....................  
+.................... unsigned int8 lcd_read_nibble(void) 
+.................... { 
+....................   #if (defined(LCD_DATA4) && defined(LCD_DATA5) && defined(LCD_DATA6) && defined(LCD_DATA7)) 
+....................    unsigned int8 n = 0x00; 
+....................  
+....................    /* Read the data port */ 
+....................    n |= input(LCD_DATA4); 
+....................    n |= input(LCD_DATA5) << 1; 
+....................    n |= input(LCD_DATA6) << 2; 
+....................    n |= input(LCD_DATA7) << 3; 
+....................     
+....................    return(n); 
+....................   #else 
+....................    return(lcd.data); 
+*
+0058:  MOVF   F83,W
+005A:  MOVWF  00
+005C:  SWAPF  00,W
+005E:  ANDLW  0F
+0060:  MOVWF  01
+....................   #endif 
+0062:  RETURN 0
+.................... } 
+....................  
+.................... void lcd_send_nibble(unsigned int8 n) 
+.................... { 
+....................   #if (defined(LCD_DATA4) && defined(LCD_DATA5) && defined(LCD_DATA6) && defined(LCD_DATA7)) 
+....................    /* Write to the data port */ 
+....................    output_bit(LCD_DATA4, bit_test(n, 0)); 
+....................    output_bit(LCD_DATA5, bit_test(n, 1)); 
+....................    output_bit(LCD_DATA6, bit_test(n, 2)); 
+....................    output_bit(LCD_DATA7, bit_test(n, 3)); 
+....................   #else       
+....................    lcdlat.data = n; 
+*
+003A:  SWAPF  1D,W
+003C:  ANDLW  F0
+003E:  MOVWF  00
+0040:  MOVLW  0F
+0042:  ANDWF  F8C,W
+0044:  IORWF  00,W
+0046:  MOVWF  F8C
+....................   #endif 
+....................        
+....................    delay_cycles(1); 
+0048:  NOP   
+....................    lcd_output_enable(1); 
+004A:  BSF    F8C.0
+....................    delay_us(2); 
+004C:  MOVLW  03
+004E:  MOVWF  00
+0050:  DECFSZ 00,F
+0052:  BRA    0050
+....................    lcd_output_enable(0); 
+0054:  BCF    F8C.0
+0056:  RETURN 0
+.................... } 
+....................  
+.................... void lcd_send_byte(unsigned int8 address, unsigned int8 n) 
+.................... { 
+....................   #if defined(__PCB__) 
+....................    set_tris_lcd(LCD_OUTPUT_MAP); 
+....................   #else 
+....................    lcd_enable_tris(); 
+*
+00A6:  BCF    F95.0
+....................    lcd_rs_tris(); 
+00A8:  BCF    F95.1
+....................    lcd_rw_tris(); 
+00AA:  BCF    F95.2
+....................   #endif 
+....................  
+....................    lcd_output_rs(0); 
+00AC:  BCF    F8C.1
+....................    while ( bit_test(lcd_read_byte(),7) ) ; 
+00AE:  BRA    0064
+00B0:  MOVFF  01,1C
+00B4:  BTFSC  01.7
+00B6:  BRA    00AE
+....................    lcd_output_rs(address); 
+00B8:  BCF    F8C.1
+00BA:  BTFSC  1A.0
+00BC:  BSF    F8C.1
+....................    delay_cycles(1); 
+00BE:  NOP   
+....................    lcd_output_rw(0); 
+00C0:  BCF    F8C.2
+....................    delay_cycles(1); 
+00C2:  NOP   
+....................    lcd_output_enable(0); 
+00C4:  BCF    F8C.0
+....................    lcd_send_nibble(n >> 4); 
+00C6:  SWAPF  1B,W
+00C8:  MOVWF  1C
+00CA:  MOVLW  0F
+00CC:  ANDWF  1C,F
+00CE:  MOVFF  1C,1D
+00D2:  RCALL  003A
+....................    lcd_send_nibble(n & 0xf); 
+00D4:  MOVF   1B,W
+00D6:  ANDLW  0F
+00D8:  MOVWF  1C
+00DA:  MOVWF  1D
+00DC:  RCALL  003A
+00DE:  RETURN 0
+.................... } 
+....................  
+.................... #if defined(LCD_EXTENDED_NEWLINE) 
+.................... unsigned int8 g_LcdX, g_LcdY; 
+.................... #endif 
+....................  
+.................... void lcd_init(void)  
+.................... { 
+....................    unsigned int8 i; 
+....................    unsigned int8 LCD_INIT_STRING[4] = {0x20 | (LCD_TYPE << 2), 0xc, 1, 6}; 
+00E0:  MOVLW  28
+00E2:  MOVWF  0B
+00E4:  MOVLW  0C
+00E6:  MOVWF  0C
+00E8:  MOVLW  01
+00EA:  MOVWF  0D
+00EC:  MOVLW  06
+00EE:  MOVWF  0E
+....................                              // These bytes need to be sent to the LCD 
+....................                              // to start it up. 
+....................     
+....................  
+....................    lcd_output_enable(0); 
+00F0:  BCF    F8C.0
+....................    lcd_output_rs(0); 
+00F2:  BCF    F8C.1
+....................    lcd_output_rw(0); 
+00F4:  BCF    F8C.2
+....................  
+....................  #if defined(__PCB__) 
+....................    set_tris_lcd(LCD_OUTPUT_MAP); 
+....................  #else 
+....................   #if (defined(LCD_DATA4) && defined(LCD_DATA5) && defined(LCD_DATA6) && defined(LCD_DATA7)) 
+....................    output_drive(LCD_DATA4); 
+....................    output_drive(LCD_DATA5); 
+....................    output_drive(LCD_DATA6); 
+....................    output_drive(LCD_DATA7); 
+....................   #else 
+....................    lcdtris.data = 0x0; 
+00F6:  MOVLW  0F
+00F8:  ANDWF  F95,W
+00FA:  MOVWF  F95
+....................   #endif 
+....................    lcd_enable_tris(); 
+00FC:  BCF    F95.0
+....................    lcd_rs_tris(); 
+00FE:  BCF    F95.1
+....................    lcd_rw_tris(); 
+0100:  BCF    F95.2
+....................  #endif 
+....................      
+....................    delay_ms(15); 
+0102:  MOVLW  0F
+0104:  MOVWF  16
+0106:  RCALL  0014
+....................    for(i=1;i<=3;++i) 
+0108:  MOVLW  01
+010A:  MOVWF  0A
+010C:  MOVF   0A,W
+010E:  SUBLW  03
+0110:  BNC   0122
+....................    { 
+....................        lcd_send_nibble(3); 
+0112:  MOVLW  03
+0114:  MOVWF  1D
+0116:  RCALL  003A
+....................        delay_ms(5); 
+0118:  MOVLW  05
+011A:  MOVWF  16
+011C:  RCALL  0014
+011E:  INCF   0A,F
+0120:  BRA    010C
+....................    } 
+....................     
+....................    lcd_send_nibble(2); 
+0122:  MOVLW  02
+0124:  MOVWF  1D
+0126:  RCALL  003A
+....................    delay_ms(5); 
+0128:  MOVLW  05
+012A:  MOVWF  16
+012C:  RCALL  0014
+....................    for(i=0;i<=3;++i) 
+012E:  CLRF   0A
+0130:  MOVF   0A,W
+0132:  SUBLW  03
+0134:  BNC   0150
+....................       lcd_send_byte(0,LCD_INIT_STRING[i]); 
+0136:  CLRF   03
+0138:  MOVF   0A,W
+013A:  ADDLW  0B
+013C:  MOVWF  FE9
+013E:  MOVLW  00
+0140:  ADDWFC 03,W
+0142:  MOVWF  FEA
+0144:  MOVFF  FEF,1B
+0148:  CLRF   1A
+014A:  RCALL  00A6
+....................  
+....................   #if defined(LCD_EXTENDED_NEWLINE) 
+014C:  INCF   0A,F
+014E:  BRA    0130
+0150:  GOTO   02BE (RETURN)
+....................    g_LcdX = 0; 
+....................    g_LcdY = 0; 
+....................   #endif 
+.................... } 
+....................  
+.................... void lcd_gotoxy(unsigned int8 x, unsigned int8 y) 
+.................... { 
+....................    unsigned int8 address; 
+....................     
+....................    if(y!=1) 
+0154:  DECFSZ 17,W
+0156:  BRA    015A
+0158:  BRA    0160
+....................       address=LCD_LINE_TWO; 
+015A:  MOVLW  40
+015C:  MOVWF  18
+015E:  BRA    0162
+....................    else 
+....................       address=0; 
+0160:  CLRF   18
+....................       
+....................    address+=x-1; 
+0162:  MOVLW  01
+0164:  SUBWF  16,W
+0166:  ADDWF  18,F
+....................    lcd_send_byte(0,0x80|address); 
+0168:  MOVF   18,W
+016A:  IORLW  80
+016C:  MOVWF  19
+016E:  CLRF   1A
+0170:  MOVWF  1B
+0172:  RCALL  00A6
+....................  
+....................   #if defined(LCD_EXTENDED_NEWLINE) 
+0174:  RETURN 0
+....................    g_LcdX = x - 1; 
+....................    g_LcdY = y - 1; 
+....................   #endif 
+.................... } 
+....................  
+.................... void lcd_putc(char c) 
+.................... { 
+....................    switch (c) 
+0176:  MOVF   15,W
+0178:  XORLW  07
+017A:  BZ    018A
+017C:  XORLW  0B
+017E:  BZ    0194
+0180:  XORLW  06
+0182:  BZ    01A4
+0184:  XORLW  02
+0186:  BZ    01B0
+0188:  BRA    01BA
+....................    { 
+....................       case '\a'   :  lcd_gotoxy(1,1);     break; 
+018A:  MOVLW  01
+018C:  MOVWF  16
+018E:  MOVWF  17
+0190:  RCALL  0154
+0192:  BRA    01C4
+....................  
+....................       case '\f'   :  lcd_send_byte(0,1); 
+0194:  CLRF   1A
+0196:  MOVLW  01
+0198:  MOVWF  1B
+019A:  RCALL  00A6
+....................                      delay_ms(2); 
+019C:  MOVLW  02
+019E:  MOVWF  16
+01A0:  RCALL  0014
+....................                     #if defined(LCD_EXTENDED_NEWLINE) 
+....................                      g_LcdX = 0; 
+....................                      g_LcdY = 0; 
+....................                     #endif 
+....................                      break; 
+01A2:  BRA    01C4
+....................  
+....................      #if defined(LCD_EXTENDED_NEWLINE) 
+....................       case '\r'   :  lcd_gotoxy(1, g_LcdY+1);   break; 
+....................       case '\n'   : 
+....................          while (g_LcdX++ < LCD_LINE_LENGTH) 
+....................          { 
+....................             lcd_send_byte(1, ' '); 
+....................          } 
+....................          lcd_gotoxy(1, g_LcdY+2); 
+....................          break; 
+....................      #else 
+....................       case '\n'   : lcd_gotoxy(1,2);        break; 
+01A4:  MOVLW  01
+01A6:  MOVWF  16
+01A8:  MOVLW  02
+01AA:  MOVWF  17
+01AC:  RCALL  0154
+01AE:  BRA    01C4
+....................      #endif 
+....................       
+....................       case '\b'   : lcd_send_byte(0,0x10);  break; 
+01B0:  CLRF   1A
+01B2:  MOVLW  10
+01B4:  MOVWF  1B
+01B6:  RCALL  00A6
+01B8:  BRA    01C4
+....................       
+....................      #if defined(LCD_EXTENDED_NEWLINE) 
+....................       default     :  
+....................          if (g_LcdX < LCD_LINE_LENGTH) 
+....................          { 
+....................             lcd_send_byte(1, c); 
+....................             g_LcdX++; 
+....................          } 
+....................          break; 
+....................      #else 
+....................       default     : lcd_send_byte(1,c);     break; 
+01BA:  MOVLW  01
+01BC:  MOVWF  1A
+01BE:  MOVFF  15,1B
+01C2:  RCALL  00A6
+....................      #endif 
+....................    } 
+01C4:  RETURN 0
+.................... } 
+....................   
+.................... char lcd_getc(unsigned int8 x, unsigned int8 y) 
+.................... { 
+....................    char value; 
+....................  
+....................    lcd_gotoxy(x,y); 
+....................    while ( bit_test(lcd_read_byte(),7) ); // wait until busy flag is low 
+....................    lcd_output_rs(1); 
+....................    value = lcd_read_byte(); 
+....................    lcd_output_rs(0); 
+....................     
+....................    return(value); 
+.................... } 
+....................  
+.................... // write a custom character to the ram 
+.................... // which is 0-7 and specifies which character array we are modifying. 
+.................... // ptr points to an array of 8 bytes, where each byte is the next row of 
+.................... //    pixels.  only bits 0-4 are used.  the last row is the cursor row, and 
+.................... //    usually you will want to leave this byte 0x00. 
+.................... void lcd_set_cgram_char(unsigned int8 which, unsigned int8 *ptr) 
+.................... { 
+....................    unsigned int i; 
+....................  
+....................    which <<= 3; 
+....................    which &= 0x38; 
+....................  
+....................    lcd_send_byte(0, 0x40 | which);  //set cgram address 
+....................  
+....................    for(i=0; i<8; i++) 
+....................    { 
+....................       lcd_send_byte(1, *ptr++); 
+....................    } 
+....................    
+....................    #if defined(LCD_EXTENDED_NEWLINE) 
+....................     lcd_gotoxy(g_LcdX+1, g_LcdY+1);  //set ddram address 
+....................    #endif 
+.................... } 
+....................  
+.................... void lcd_cursor_on(int1 on) 
+.................... { 
+....................    if (on) 
+....................    { 
+....................       lcd_send_byte(0,0x0F);           //turn LCD cursor ON 
+....................    } 
+....................    else 
+....................    { 
+....................       lcd_send_byte(0,0x0C);           //turn LCD cursor OFF 
+....................    } 
+.................... } 
+....................  
+.................... #endif 
+....................  
+.................... //ex1: uso do timer0 
+....................    int16 t1, t2, x; 
+.................... void main() 
+*
+02A0:  CLRF   FF8
+02A2:  BCF    FD0.7
+02A4:  MOVF   FC1,W
+02A6:  ANDLW  C0
+02A8:  IORLW  0F
+02AA:  MOVWF  FC1
+02AC:  MOVLW  07
+02AE:  MOVWF  FB4
+.................... { 
+....................    //intruções de configuração 
+....................    //set_tris_d(0x00); 
+....................    setup_timer_0(RTCC_INTERNAL|RTCC_DIV_64); 
+02B0:  MOVLW  85
+02B2:  MOVWF  FD5
+....................    //clock do timer0 vinculado ao RTCC 
+....................    //a frequencia de incremento será 
+....................    //Einc = (48Mhz)/64 = 187,5 Khz 
+....................    t1=get_timer0(); 
+02B4:  MOVF   FD6,W
+02B6:  MOVWF  04
+02B8:  MOVFF  FD7,05
+....................    lcd_init(); 
+02BC:  BRA    00E0
+....................    for (x=0; x<10000; x+1){} 
+02BE:  CLRF   09
+02C0:  CLRF   08
+02C2:  MOVF   09,W
+02C4:  SUBLW  27
+02C6:  BNC   02D2
+02C8:  BNZ   02D0
+02CA:  MOVF   08,W
+02CC:  SUBLW  0F
+02CE:  BTFSC  FD8.0
+02D0:  BRA    02C2
+....................    t2=get_timer0(); 
+02D2:  MOVF   FD6,W
+02D4:  MOVWF  06
+02D6:  MOVFF  FD7,07
+....................    printf(lcd_putc,"deltaT= %Lu us", (t2-t1)*64); 
+02DA:  MOVF   04,W
+02DC:  SUBWF  06,W
+02DE:  MOVWF  0A
+02E0:  MOVF   05,W
+02E2:  SUBWFB 07,W
+02E4:  MOVWF  0B
+02E6:  RLCF   0A,F
+02E8:  RLCF   0B,F
+02EA:  RLCF   0A,F
+02EC:  RLCF   0B,F
+02EE:  RLCF   0A,F
+02F0:  RLCF   0B,F
+02F2:  RLCF   0A,F
+02F4:  RLCF   0B,F
+02F6:  RLCF   0A,F
+02F8:  RLCF   0B,F
+02FA:  RLCF   0A,F
+02FC:  RLCF   0B,F
+02FE:  MOVLW  C0
+0300:  ANDWF  0A,F
+0302:  MOVLW  04
+0304:  MOVWF  FF6
+0306:  MOVLW  00
+0308:  MOVWF  FF7
+030A:  MOVLW  08
+030C:  MOVWF  0C
+030E:  RCALL  01C6
+0310:  MOVLW  10
+0312:  MOVWF  FE9
+0314:  MOVFF  0B,0D
+0318:  MOVFF  0A,0C
+031C:  BRA    01E4
+031E:  MOVLW  0F
+0320:  MOVWF  FF6
+0322:  MOVLW  00
+0324:  MOVWF  FF7
+0326:  MOVLW  03
+0328:  MOVWF  0C
+032A:  RCALL  01C6
+....................    while(TRUE){} 
+032C:  BRA    032C
+.................... }  
+032E:  SLEEP 
+
+Configuration Fuses:
+   Word  1: CC04   PLL5 CPUDIV1 NOUSBDIV HS FCMEN IESO
+   Word  2: 1E3E   PUT BROWNOUT BORV21 VREGEN NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 00A1   STVREN NOLVP ICSP2 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

@@ -1,0 +1,22 @@
+#include <lab07.h>
+#include <LCD.C>
+//ex1: uso do timer0
+   int16 t1, t2, x;
+void main()
+{
+   //intruções de configuração
+   set_tris_d(0x00);
+   setup_timer_0(RTCC_INTERNAL|RTCC_DIV_64);
+   //clock do timer0 vinculado ao RTCC
+   //a frequencia de incremento será
+   //Einc = (48Mhz)/64 = 187,5 Khz
+   t1=get_timer0();
+   lcd_init();
+   for (x=0; x<10000; x+1){}
+   t2=get_timer0();
+   while(TRUE)
+   {
+   printf(lcd_putc,"deltaT= %Lu us", (t2-t1)*64);
+   }
+}
+ 

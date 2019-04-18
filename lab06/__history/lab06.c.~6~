@@ -1,0 +1,20 @@
+#include <lab06.h>
+#include <LCD.C>
+
+void main()
+{
+   int16 cnt;
+   lcd_init();
+   cnt=CNT_MAX;
+   
+   while(TRUE)
+   {
+      delay_ms(REFRESH_INTERNAL);
+      cnt=(cnt==CNT_MAX)? 0 : cnt+1;
+      lcd_gotoxy(1,1);
+      lcd_putc("Tempo:\n");
+      lcd_gotoxy(8,2);
+      printf(lcd_putc, "%ld",cnt); 
+   }
+
+}

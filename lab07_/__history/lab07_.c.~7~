@@ -1,0 +1,30 @@
+#include <lab07_.h>
+#include <lcd.c>
+//ex2: interrupção com o timer0
+int8 cnt, seg, min;
+#INT_TIMER0
+void timer0_isr(){
+  cnt=(cnt==184)?0:cnt+1;
+  seg=(cnt==0)?((seg==59)?0:seg+1):seg;
+  min=(cnt==0 && seg==0)?((min==59)?0:min+1):min;
+  }
+  
+void main()
+  {
+  int8 seg_old=99;
+  //configura o timer0 para estourar em 5,4ms
+  setup_timer_0(RTCC_INTERNAL|RTCC_DIV_1);
+  //outras rotinas de configuração 
+  seg=0; min=0; cnt=0;
+  enable_interrupts(INT_TIMER0);
+  enable_interrupts(GLOBAL);
+  lcd_init();
+  while(TRUE){
+  if(seg!=seg_old){
+  lcd_gotoxy(1,1);
+  printf(lcd_putc,"%2u:%2u",min,seg);
+  seg_old=seg;
+  
+      }   
+   }
+}

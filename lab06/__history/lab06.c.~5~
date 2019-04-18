@@ -1,0 +1,24 @@
+#include <18F4550.h>
+
+#use delay(crystal=20000000)
+#include <LCD.C>
+#define REFRESH_INTERNAL 120
+#define CNT_MAX 9999
+
+void main()
+{
+   int16 cnt;
+   lcd_init();
+   cnt=CNT_MAX;
+   
+   while(TRUE)
+   {
+      delay_ms(REFRESH_INTERNAL);
+      cnt=(cnt==CNT_MAX)? 0 : cnt+1;
+      lcd_gotoxy(1,1);
+      lcd_putc("Tempo:\n");
+      lcd_gotoxy(7,2);
+      printf(lcd_putc, "%ld",cnt); 
+   }
+
+}

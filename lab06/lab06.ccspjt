@@ -1,0 +1,116 @@
+[Directories]
+Include=
+Library=
+LinkerScript=
+output=
+
+[defines]
+enabled=0
+chip=1
+D1=
+V1=
+buildcount=10
+
+[fileformats]
+forcecoff=1
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+expandtree=0
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=0
+
+[PROJECT]
+Target=lab06.hex
+Development_Mode=
+Processor_Text=PIC18F4550
+ToolSuite=CCS
+CCSVersion=5.070
+Compiler=PCH
+
+[Target Data]
+BuildTool=C-COMPILER
+OptionString=+FH
+AdditionalOptionString=
+BuildRequired=1
+FileList=lab06.c
+
+[lab06.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+
+[mru-list]
+1=lab06.c
+
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+
+
+[CompilerVersion]
+Fixed=
+
+[ProjectLog]
+Days=3
+D1=26-05-2017
+D1_L=11
+D1_L1=[32816]Started Editing.
+D1_L2=[32978]Stopped Editing.
+TotalEdit=21
+TotalDebug=0
+D1_E=6
+D1_D=0
+D1_L3=[32978]Project Closed.
+D1_L4=[32994]Project Opened.
+D1_L5=[33023]Project Closed.
+D1_L6=[34617]Project Opened.
+D1_L7=[34663]Started Editing.
+D1_L8=[34796]Stopped Editing.
+D1_L9=[34796]Project Closed.
+D1_L10=[34860]Project Opened.
+D1_L11=[35058]Project Closed.
+D2=30-05-2017
+D2_L=10
+D2_L1=[1242]Project Opened.
+D2_L2=[1256]Started Editing.
+D2_L3=[1588]Stopped Editing.
+D2_E=11
+D2_D=0
+D2_L4=[1588]Project Closed.
+D2_L5=[64836]Project Opened.
+D2_L6=[65098]Project Closed.
+D2_L7=[74498]Project Opened.
+D2_L8=[74553]Started Editing.
+D2_L9=[74801]Stopped Editing.
+D2_L10=[74801]Project Closed.
+D3=31-05-2017
+D3_L=8
+D3_L1=[29052]Project Opened.
+D3_L2=[29068]Started Editing.
+D3_L3=[29409]Stopped Editing.
+D3_E=4
+D3_D=0
+D3_L4=[29530]Project Closed.
+D3_L5=[29608]Project Opened.
+D3_L6=[29658]Started Editing.
+D3_L7=[29827]Stopped Editing.
+D3_L8=[29827]Project Closed.
+
+[Opened Files]
+1=lab06.c
+t1=1
+2=lab06.h
+t2=1
+Count=2
+[Units]
+Count=1
+1=lab06 (main)

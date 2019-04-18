@@ -1,0 +1,13 @@
+#include <lab07.h>
+
+void main()
+{
+
+	while(TRUE)
+	{
+
+
+		//TODO: User Code
+	}
+
+}

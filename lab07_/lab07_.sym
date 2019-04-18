@@ -1,0 +1,130 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019     cnt
+01A     seg
+01B     min
+01C-01D @sprintf_string
+01E     MAIN.seg_old
+01F     lcd_init.i
+01F     @PRINTF_U_655.P1
+01F     @PSTRINGC_655.@SCRATCH1
+020     @PRINTF_U_655.P1
+020-023 lcd_init.LCD_INIT_STRING
+020     @PSTRINGC_655.@SCRATCH2
+021     lcd_putc.c
+021     @DIV88.P1
+022     @DIV88.P1
+022     lcd_gotoxy.x
+023     lcd_gotoxy.y
+023     @DIV88.@SCRATCH1
+024     @delay_ms1.P1
+024     lcd_gotoxy.address
+024     lcd_init.@SCRATCH1
+025     lcd_gotoxy.@SCRATCH1
+026     lcd_send_byte.address
+027     lcd_send_byte.n
+028     lcd_read_byte.low
+028     lcd_send_byte.@SCRATCH1
+029     lcd_read_byte.high
+029     lcd_send_nibble.n
+02A     lcd_read_byte.@SCRATCH1
+F83     PSP_DATA
+F83     lcd
+F8C     lcdlat
+F95     lcdtris
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000AE  timer0_isr
+0000F8  @const675.call
+000100  @delay_ms1
+000126  lcd_send_nibble
+000144  lcd_read_nibble
+000150  lcd_read_byte
+000192  lcd_send_byte
+0001CC  lcd_init
+000240  lcd_gotoxy
+000262  lcd_putc
+0002B2  @PSTRINGC_655
+0002D4  @DIV88
+0002FC  @PRINTF_U_655
+000362  @cinit1
+000362  MAIN
+000378  @cinit2
+
+Project Directory:
+    C:\Users\Fábio Bends\Documents\PIC\lab07_\
+
+Project Files:
+    lab07_.c                                                [31-mai-17 08:33  CRC=4B764DAD]
+    lab07_.h                                                [29-mai-17 23:51  CRC=00000000]
+    ..\..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h [24-fev-17 16:24  CRC=AD4A1276]
+    ..\..\..\..\..\Program Files (x86)\PICC\drivers\lcd.c   [22-fev-16 09:05  CRC=D1A6378A]
+
+Source signature=9C0CCF37
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=AF20
+
+Units:
+    lab07_ (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   lab07_.xsym
+    Errors:      lab07_.err
+    Ext Symbols: lab07_.esym
+    INHX32:      lab07_.hex
+    Symbols:     lab07_.sym
+    List:        lab07_.lst
+    Debug/COFF:  lab07_.cof
+    Project:     lab07_.ccspjt
+    Call Tree:   lab07_.tre
+    Statistics:  lab07_.STA
