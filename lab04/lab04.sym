@@ -1,0 +1,87 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     display_refresh.digit
+005-006 MAIN.seg
+007     MAIN.cnt
+008     @delay_ms1.P1
+008-009 display_refresh.val
+00A     display_refresh.uni
+00B     display_refresh.dec
+00C     display_refresh.cent
+00D     display_refresh.mil
+00E     display_refresh.digit_bcd
+00F     display_refresh.bcd
+010     bin2bcd.num
+010     display_refresh.@SCRATCH1
+011     bin2bcd.bcd
+011     display_refresh.@SCRATCH2
+012-013 @DIV1616.P1
+014-015 @DIV1616.P1
+016     @DIV1616.@SCRATCH1
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @DIV1616
+000058  bin2bcd
+0000CC  display_refresh
+0001F0  @goto4713
+000212  @delay_ms1
+00023A  MAIN
+00023A  @cinit1
+00024C  @cinit2
+
+Project Directory:
+    C:\Users\Fábio Bends\Documents\PIC\lab04\
+
+Project Files:
+    lab04.c                                                 [30-mai-17 20:13  CRC=51726C95]
+    lab04.h                                                 [21-mai-17 11:43  CRC=DC7C8500]
+    ..\..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h [24-fev-17 16:24  CRC=AD4A1276]
+
+Source signature=88831681
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=C92B
+
+Units:
+    lab04 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-65535
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   lab04.xsym
+    Errors:      lab04.err
+    Ext Symbols: lab04.esym
+    INHX32:      lab04.hex
+    Symbols:     lab04.sym
+    List:        lab04.lst
+    Debug/COFF:  lab04.cof
+    Project:     lab04.ccspjt
+    Call Tree:   lab04.tre
+    Statistics:  lab04.STA

@@ -1,0 +1,102 @@
+[PROJECT]
+Target=lab01.hex
+Development_Mode=
+Processor_Text=PIC18F4550
+ToolSuite=CCS
+Processor=0x4550
+CCSVersion=5.070
+Compiler=PCH
+[C:\Users\Fábio Bends\Documents\PIC\lab01\lab01]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=lab01.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Opened Files]
+1=..\lab03\lab03.h
+2=..\lab03\lab03.c
+3=
+t1=1
+Count=2
+t2=1
+
+[ProjectLog]
+Days=1
+D1=30-05-2017
+D1_L=20
+D1_L1=[65151]Project Opened.
+D1_L2=[65168]Started Editing.
+D1_L3=[65675]Stopped Editing.
+TotalEdit=25
+TotalDebug=0
+D1_E=25
+D1_D=0
+D1_L4=[65675]Project Closed.
+D1_L5=[66825]Project Opened.
+D1_L6=[66860]Project Closed.
+D1_L7=[66871]Project Opened.
+D1_L8=[67125]Project Closed.
+D1_L9=[67149]Project Opened.
+D1_L10=[67171]Project Closed.
+D1_L11=[67207]Project Opened.
+D1_L12=[67255]Started Editing.
+D1_L13=[67607]Stopped Editing.
+D1_L14=[68225]Started Editing.
+D1_L15=[69080]Stopped Editing.
+D1_L16=[69080]Project Closed.
+D1_L17=[71478]Project Opened.
+D1_L18=[71479]Project Closed.
+D1_L19=[71479]Project Opened.
+D1_L20=[71493]Project Closed.
+[Target Data]
+FileList=lab01.c
+BuildTool=C-COMPILER
+OptionString=+FH
+AdditionalOptionString=
+BuildRequired=1
+[lab01.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+
+[defines]
+buildcount=4
+enabled=0
+chip=1
+D1=
+V1=
+
+[Directories]
+Include=
+Library=
+LinkerScript=
+output=
+
+[fileformats]
+forcecoff=1
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+expandtree=0
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=0
+
+[CompilerVersion]
+Fixed=
+[Units]
+Count=1
+1=lab01 (main)

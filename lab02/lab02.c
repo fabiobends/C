@@ -1,0 +1,35 @@
+#include <lab02.h>
+#define BOTAO PIN_E0
+#define LED_VERDE PIN_B0
+#define LED_AMARELO PIN_B1
+#define LED_VERMELHO PIN_B2
+
+void main()
+{
+   int1 button;
+   // TODO: USER CODE!!
+   set_tris_b(0b00011111);
+   set_tris_e(0xff);
+   while(TRUE){
+   output_high(LED_VERDE);
+   button=input(BOTAO);
+   if (button==0){
+   output_low(LED_VERMELHO);
+   output_low(LED_AMARELO);
+   output_high(LED_VERDE);
+   delay_ms(5000);
+   output_low(LED_VERDE);
+   output_low(LED_VERMELHO);
+   output_high(LED_AMARELO);
+   delay_ms(2000);
+   output_low(LED_AMARELO);
+   output_low(LED_VERMELHO);
+   output_high(LED_VERMELHO);
+   delay_ms(4000);
+   output_low(LED_AMARELO);
+   output_low(LED_VERMELHO);
+   output_low(LED_VERMELHO);
+      }
+   }
+}
+

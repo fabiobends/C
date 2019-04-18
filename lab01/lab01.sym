@@ -1,0 +1,67 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     main.@SCRATCH1
+006     @delay_ms1.P1
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @delay_ms1
+00002E  @cinit1
+00002E  main
+00003E  @cinit2
+
+Project Directory:
+    C:\Users\Fábio Bends\Documents\PIC\lab01\
+
+Project Files:
+    lab01.c                                                 [30-mai-17 18:13  CRC=7897BECD]
+    lab01.h                                                 [30-mai-17 18:13  CRC=00000000]
+    ..\..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h [24-fev-17 16:24  CRC=AD4A1276]
+
+Source signature=D32BE3B9
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=40DB
+
+Units:
+    lab01 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   lab01.xsym
+    Errors:      lab01.err
+    Ext Symbols: lab01.esym
+    INHX32:      lab01.hex
+    Symbols:     lab01.sym
+    List:        lab01.lst
+    Debug/COFF:  lab01.cof
+    Project:     lab01.ccspjt
+    Call Tree:   lab01.tre
+    Statistics:  lab01.STA

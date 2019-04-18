@@ -1,0 +1,16 @@
+읕lab05
+   읕MAIN  0/212  Ram=13
+      쳐@cinit1  (Inline)  Ram=0
+      쳐@delay_ms1  0/44  Ram=1
+      쳐@MUL3232  0/86  Ram=14
+      쳐@DIV3232  0/144  Ram=13
+      읕display_refresh  0/302  Ram=10
+         쳐@DIV1616  0/66  Ram=5
+         쳐@DIV1616  0/66  Ram=5
+         쳐@DIV1616  0/66  Ram=5
+         쳐@DIV1616  0/66  Ram=5
+         쳐@DIV1616  0/66  Ram=5
+         쳐@DIV1616  0/66  Ram=5
+         쳐@DIV1616  0/66  Ram=5
+         쳐@goto33342  0/34  Ram=0
+         읕bin2bcd  0/116  Ram=2

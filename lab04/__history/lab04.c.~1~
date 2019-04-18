@@ -1,0 +1,115 @@
+#include <lab04.h>
+#define D_UNI pin_a3
+#define D_DEC pin_e2
+#define D_CENT pin_e1
+#define D_MIL pin_e0
+#define REFRESH_INTERNAL 10
+#define CNT_MAX 99
+#define SEG_MAX 9999
+
+byte bin2bcd(int8 num)
+{
+   byte bcd;
+   switch(num)
+   {
+   case 0: bcd = 0b00111111; 
+   break;
+   case 1: bcd = 0b00000110; 
+   break;
+   case 2: bcd = 0b01011011; 
+   break;
+   case 3: bcd = 0b01001111; 
+   break;
+   case 4: bcd = 0b01100110; 
+   break;
+   case 5: bcd = 0b01101101; 
+   break;
+   case 6: bcd = 0b01111101; 
+   break;
+   case 7: bcd = 0b00000111; 
+   break;
+   case 8: bcd = 0b01111111; 
+   break;
+   case 9: bcd = 0b01101111; 
+   break;
+   default : bcd = 0b01000000; 
+   break;
+   }
+   return bcd;
+}
+
+void display_refresh(int16 val)
+{
+   int8 uni, dec, cent, mil;
+   static int8 digit=0;
+   int8 digit_bcd, bcd;
+   
+   uni=val%10;
+   dec=(val%100)/10;
+   cent=(val%1000)/100;
+   mil=(val%10000)/1000;
+   
+   switch(digit)
+   {
+   case 0:
+           {
+      output_low(D_DEC);
+      output_low(D_CENT);
+      output_low(D_MIL);
+      output_high(D_UNI);
+      digit_bcd=uni;
+      break;
+           }
+   case 1: 
+           {
+      output_low(D_UNI);
+      output_low(D_CENT);
+      output_low(D_MIL);
+      output_high(D_DEC);
+      digit_bcd=dec;
+      break;
+           }        
+   case 2: 
+           {
+      output_low(D_DEC);
+      output_low(D_UNI);
+      output_low(D_MIL);
+      output_high(D_CENT);
+      digit_bcd=cent;
+      break;
+           }
+   case 3: 
+           {
+      output_low(D_DEC);
+      output_low(D_CENT);
+      output_low(D_UNI);
+      output_high(D_MIL);
+      digit_bcd=mil;
+      break;
+           }        
+   }
+   bcd=bin2bcd(digit_bcd);
+   output_d(bcd);
+   digit =(digit==3) ? 0 : digit+1;
+   }
+
+
+void main()
+{
+   set_tris_a(0x00);
+   set_tris_d(0x00);
+   set_tris_e(0x00);
+   
+   int16 seg=0;
+   int8 cnt=0;
+   
+   while(TRUE)
+   {
+   display_refresh(seg);
+   delay_ms(REFRESH_INTERNAL);
+   cnt=(cnt==CNT_MAX)? 0 : cnt+1;
+   seg=(cnt==0)? seg+1 : seg;
+   seg=(seg==SEG_MAX)? 0 : seg;
+   }
+}
+

@@ -1,0 +1,33 @@
+[PROJECT]
+Target=C:\Users\Fábio Bends\Documents\PIC\lab03\lab03.hex
+Development_Mode=
+Processor_Text=PIC18F4550
+ToolSuite=CCS
+Processor=0x4550
+[C:\Users\Fábio Bends\Documents\PIC\lab03\lab03]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=C:\Users\Fábio Bends\Documents\PIC\lab03\lab03.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Units]
+Link=0
+Count=1
+1=C:\Users\Fábio Bends\Documents\PIC\lab03\lab03
+[Opened Files]
+1=..\lab03\lab03.c
+2=lab03.h
+3=..\lab04\lab04.c
+4=
+
+[ProjectLog]
+Days=1
+D1=30-05-2017
+D1_L=2
+D1_L1=[71479]Project Opened.
+D1_L2=[71479]Project Closed.

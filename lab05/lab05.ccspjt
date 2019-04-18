@@ -1,0 +1,86 @@
+[PROJECT]
+Target=lab05.hex
+Development_Mode=
+Processor_Text=PIC18F4550
+ToolSuite=CCS
+Processor=0x4550
+CCSVersion=5.070
+Compiler=PCH
+[C:\Users\Fábio Bends\Documents\PIC\lab05\lab05]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=lab05.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Opened Files]
+1=lab05.c
+2=lab05.h
+3=lab05.h
+4=
+t1=1
+t2=1
+Count=2
+
+[ProjectLog]
+Days=1
+D1=30-05-2017
+D1_L=5
+D1_L1=[73154]Project Opened.
+D1_L2=[73269]Started Editing.
+D1_L3=[73728]Stopped Editing.
+D1_L4=[73945]Started Editing.
+D1_L5=[74488]Project Closed.
+
+[Directories]
+Include=
+Library=
+LinkerScript=
+output=
+
+[defines]
+enabled=0
+chip=1
+D1=
+V1=
+buildcount=2
+
+[fileformats]
+forcecoff=1
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+expandtree=0
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=0
+
+[Target Data]
+BuildTool=C-COMPILER
+OptionString=+FH
+AdditionalOptionString=
+BuildRequired=1
+FileList=lab05.c
+
+[lab05.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+
+[CompilerVersion]
+Fixed=
+[Units]
+Count=1
+1=lab05 (main)

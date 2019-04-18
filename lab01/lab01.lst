@@ -1,0 +1,137 @@
+CCS PCH C Compiler, Version 5.070, 56587               30-mai-17 19:09
+
+               Filename:   C:\Users\Fábio Bends\Documents\PIC\lab01\lab01.lst
+
+               ROM used:   148 bytes (0%)
+                           Largest free fragment is 32620
+               RAM used:   5 (0%) at main() level
+                           6 (0%) worst case
+               Stack used: 0 locations
+               Stack size: 31
+
+*
+0000:  GOTO   002E
+.................... #include <lab01.h> 
+.................... #include <18F4550.h> 
+.................... //////////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F4550 
+....................  
+.................... #list 
+....................  
+....................  
+.................... #use delay(clock=20000000) 
+0004:  CLRF   FEA
+0006:  MOVLW  06
+0008:  MOVWF  FE9
+000A:  MOVF   FEF,W
+000C:  BTFSC  FD8.2
+000E:  GOTO   002C
+0012:  MOVLW  06
+0014:  MOVWF  01
+0016:  CLRF   00
+0018:  DECFSZ 00,F
+001A:  BRA    0018
+001C:  DECFSZ 01,F
+001E:  BRA    0016
+0020:  MOVLW  7B
+0022:  MOVWF  00
+0024:  DECFSZ 00,F
+0026:  BRA    0024
+0028:  DECFSZ FEF,F
+002A:  BRA    0012
+002C:  RETURN 0
+....................  
+....................  
+.................... #define LED_VERDE PIN_B0         //Defina três pinos 
+.................... #define LED_AMARELO PIN_B1       //com suas respectivas    
+.................... #define LED_VERMELHO PIN_B2      //cores no semáforo 
+....................  
+.................... void main() 
+002E:  CLRF   FF8
+0030:  BCF    FD0.7
+0032:  MOVF   FC1,W
+0034:  ANDLW  C0
+0036:  IORLW  0F
+0038:  MOVWF  FC1
+003A:  MOVLW  07
+003C:  MOVWF  FB4
+.................... { 
+....................   set_tris_b(0x00); // define porta B como saída 
+003E:  MOVLW  00
+0040:  MOVWF  F93
+....................   while(TRUE) 
+....................   { 
+....................   output_low(LED_VERMELHO); //led vermelho desligado 
+0042:  BCF    F93.2
+0044:  BCF    F8A.2
+....................   output_low(LED_AMARELO);  //led amarelo desligado 
+0046:  BCF    F93.1
+0048:  BCF    F8A.1
+....................   output_high(LED_VERDE);   //led verde ligado 
+004A:  BCF    F93.0
+004C:  BSF    F8A.0
+....................   delay_ms(5000);           //por 5 segundos 
+004E:  MOVLW  14
+0050:  MOVWF  05
+0052:  MOVLW  FA
+0054:  MOVWF  06
+0056:  RCALL  0004
+0058:  DECFSZ 05,F
+005A:  BRA    0052
+....................   output_low(LED_VERDE);    //led verde desligado 
+005C:  BCF    F93.0
+005E:  BCF    F8A.0
+....................   output_low(LED_VERMELHO); //led vermelho continua desligado 
+0060:  BCF    F93.2
+0062:  BCF    F8A.2
+....................   output_high(LED_AMARELO); //led amarelo ligado 
+0064:  BCF    F93.1
+0066:  BSF    F8A.1
+....................   delay_ms(2000);           //por 2 segundos 
+0068:  MOVLW  08
+006A:  MOVWF  05
+006C:  MOVLW  FA
+006E:  MOVWF  06
+0070:  RCALL  0004
+0072:  DECFSZ 05,F
+0074:  BRA    006C
+....................   output_low(LED_AMARELO);  //led amarelo desligado 
+0076:  BCF    F93.1
+0078:  BCF    F8A.1
+....................   output_low(LED_VERDE);    //led verde desligado 
+007A:  BCF    F93.0
+007C:  BCF    F8A.0
+....................   output_high(LED_VERMELHO);//led vermelho ligado 
+007E:  BCF    F93.2
+0080:  BSF    F8A.2
+....................   delay_ms(4000);           //por 4 segundos 
+0082:  MOVLW  10
+0084:  MOVWF  05
+0086:  MOVLW  FA
+0088:  MOVWF  06
+008A:  RCALL  0004
+008C:  DECFSZ 05,F
+008E:  BRA    0086
+0090:  BRA    0042
+....................   } 
+.................... } 
+....................  
+0092:  SLEEP 
+
+Configuration Fuses:
+   Word  1: CF3F   PLL12 CPUDIV4 USBDIV FCMEN IESO
+   Word  2: 1E3E   PUT BROWNOUT BORV21 VREGEN NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 00A1   STVREN NOLVP ICSP2 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

@@ -1,0 +1,109 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     display_refresh.digit
+005-008 MAIN.tensao
+009-00C MAIN.val
+00D     MAIN.cnt
+00E-011 @MUL3232.P1
+00E     @delay_ms1.P2
+00E     MAIN.@SCRATCH1
+00F     MAIN.@SCRATCH2
+010-011 display_refresh.val
+010     MAIN.@SCRATCH3
+011     MAIN.@SCRATCH4
+012-015 @DIV3232.P1
+012     display_refresh.uni
+012-015 @MUL3232.P1
+013     display_refresh.dec
+014     display_refresh.cent
+015     display_refresh.mil
+016-019 @DIV3232.P1
+016     display_refresh.digit_bcd
+016     @MUL3232.@SCRATCH1
+017     display_refresh.bcd
+017     @MUL3232.@SCRATCH2
+018     bin2bcd.num
+018     display_refresh.@SCRATCH1
+018     @MUL3232.@SCRATCH3
+019     bin2bcd.bcd
+019     display_refresh.@SCRATCH2
+019     @MUL3232.@SCRATCH4
+01A-01B @DIV1616.P1
+01A     @MUL3232.@SCRATCH5
+01A     @DIV3232.@SCRATCH1
+01B     @MUL3232.@SCRATCH6
+01B     @DIV3232.@SCRATCH2
+01C-01D @DIV1616.P1
+01C     @DIV3232.@SCRATCH3
+01D     @DIV3232.@SCRATCH4
+01E     @DIV1616.@SCRATCH1
+01E     @DIV3232.@SCRATCH5
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @delay_ms1
+000030  @MUL3232
+000086  @DIV3232
+000116  @DIV1616
+000158  bin2bcd
+0001CC  display_refresh
+0002FA  @goto33342
+00031C  @cinit1
+00031C  MAIN
+00032E  @cinit2
+
+Project Directory:
+    C:\Users\Fábio Bends\Documents\PIC\lab05\
+
+Project Files:
+    lab05.c                                                 [30-mai-17 20:39  CRC=212EF954]
+    lab05.h                                                 [30-mai-17 20:24  CRC=00000000]
+    ..\..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h [24-fev-17 16:24  CRC=AD4A1276]
+
+Source signature=7BC31E40
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=BC83
+
+Units:
+    lab05 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   lab05.xsym
+    Errors:      lab05.err
+    Ext Symbols: lab05.esym
+    INHX32:      lab05.hex
+    Symbols:     lab05.sym
+    List:        lab05.lst
+    Debug/COFF:  lab05.cof
+    Project:     lab05.ccspjt
+    Call Tree:   lab05.tre
+    Statistics:  lab05.STA

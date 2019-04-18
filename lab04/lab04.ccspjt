@@ -1,0 +1,44 @@
+[PROJECT]
+Target=lab04.hex
+Development_Mode=
+Processor_Text=PIC18F4550
+ToolSuite=CCS
+Processor=0x4550
+CCSVersion=5.070
+Compiler=PCH
+[C:\Users\Fábio Bends\Documents\PIC\lab04\lab04]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=lab04.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Opened Files]
+1=lab04.c
+2=lab04.h
+t1=42
+t2=1
+Count=2
+
+[ProjectLog]
+Days=1
+D1=30-05-2017
+D1_L=4
+D1_L1=[71511]Project Opened.
+D1_L2=[71552]Started Editing.
+D1_L3=[73081]Stopped Editing.
+D1_L4=[73143]Project Closed.
+[Target Data]
+FileList=lab04.c
+[lab04.c]
+Type=4
+[Units]
+Count=1
+1=lab04 (main)
+
+[defines]
+buildcount=1
